@@ -1,0 +1,98 @@
+{
+  "name": "react-text-loop-next-hook",
+  "version": "1.0.0",
+  "description": "Create an animated loop of a list of text for your headings",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir dist/types",
+    "prebuild": "rimraf dist",
+    "start:examples": "parcel examples/index.html -d examples/dist --cache-dir examples/cache --open",
+    "lint": "npm-run-all lint:*",
+    "lint:src": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
+    "prettier": "prettier --write .",
+    "prepublishOnly": "yarn run test && yarn run prettier && yarn run lint && yarn run build",
+    "quality": "yarn run test && yarn run prettier && yarn run lint",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "prepare": "husky install",
+    "commit:signed": "git add -A && cz -S",
+    "commit": "git add -A && cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blithe07/react-text-loop-next-hook.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "component",
+    "text",
+    "animation",
+    "loop",
+    "cycle",
+    "react",
+    "motion"
+  ],
+  "author": "Blithe07 <Blithe0712@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blithe07/react-text-loop-next-hook/issues"
+  },
+  "homepage": "https://github.com/blithe07/react-text-loop-next-hook#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^18.7.14",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-motion": "^0.0.33",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
+    "jest": "^29.0.1",
+    "jest-environment-jsdom": "^29.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "cxs": "^6.2.0",
+    "react-motion-ts": "^1.0.0"
+  },
+  "packageManager": "yarn@3.2.3"
+}
