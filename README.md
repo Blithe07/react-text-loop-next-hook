@@ -92,7 +92,6 @@ each node.
 
 For many other examples, please have a look at the [react-text-loop-next][https://github.com/samarmohan/react-text-loop-next].
 
-
 ## License
 
 [MIT](https://github.com/blithe07/react-text-loop-next-hook/blob/master/LICENSE)

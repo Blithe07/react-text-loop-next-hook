@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  ReactNode,
-  Children,
-} from "react";
+import React, { useState, useEffect, useRef, ReactNode, Children } from "react";
 import { TransitionMotion, spring } from "react-motion-ts";
 import type { OpaqueConfig, TransitionStyle } from "react-motion-ts";
 import cxs from "cxs";
@@ -12,17 +6,17 @@ import { isEqual } from "./isEqual";
 import { requestTimeout, clearRequestTimeout, RequestTimeout } from "./utils";
 
 type Props = {
-  children: ReactNode[];
-  interval: number | number[];
-  delay: number;
-  adjustingSpeed: number;
-  springConfig: {
+  children?: (string | JSX.Element)[];
+  interval?: number | number[];
+  delay?: number;
+  adjustingSpeed?: number;
+  springConfig?: {
     stiffness: number;
     damping: number;
   };
-  fade: boolean;
-  mask: boolean;
-  noWrap: boolean;
+  fade?: boolean;
+  mask?: boolean;
+  noWrap?: boolean;
   className?: string;
   onChange?: Function;
 };
@@ -38,7 +32,7 @@ const TextLoop: React.FC<Props> = ({
   className = "",
   onChange,
   children,
-}: Props) => {
+}) => {
   const [elements, setElements] = useState<ReactNode[]>(
     Children.toArray(children)
   );
